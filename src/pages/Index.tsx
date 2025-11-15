@@ -1,12 +1,24 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Sidebar } from "@/components/Sidebar";
+import { ChatSection } from "@/components/ChatSection";
+import { SimulationSection } from "@/components/SimulationSection";
+import { QASection } from "@/components/QASection";
+import { GoLiveSection } from "@/components/GoLiveSection";
+import { HypercareSection } from "@/components/HypercareSection";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="flex min-h-screen w-full bg-background">
+      <Sidebar />
+      
+      <main className="flex-1 overflow-y-auto">
+        <div className="max-w-5xl mx-auto px-6 py-8 space-y-8">
+          <ChatSection />
+          <SimulationSection />
+          <QASection />
+          <GoLiveSection />
+          <HypercareSection />
+        </div>
+      </main>
     </div>
   );
 };
