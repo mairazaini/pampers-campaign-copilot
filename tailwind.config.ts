@@ -54,7 +54,7 @@ export default {
         warning: "hsl(var(--warning))",
         "pampers-teal": "hsl(var(--pampers-teal))",
         "pampers-teal-dark": "hsl(var(--pampers-teal-dark))",
-        "pampers-green": "hsl(var(--pampers-green))",
+        "pampers-blue": "hsl(var(--pampers-blue))",
         "pampers-yellow": "hsl(var(--pampers-yellow))",
       },
       borderRadius: {
