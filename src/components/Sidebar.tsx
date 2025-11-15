@@ -1,10 +1,11 @@
 import { Sparkles, FileText, Activity, BarChart3 } from "lucide-react";
+import { NavLink } from "./NavLink";
 
 const navItems = [
-  { id: "new", label: "New Campaign", icon: Sparkles, active: true },
-  { id: "drafts", label: "Drafts", icon: FileText, active: false },
-  { id: "active", label: "Active Campaigns", icon: Activity, active: false },
-  { id: "analytics", label: "Hypercare Analytics", icon: BarChart3, active: false },
+  { id: "new", label: "New Campaign", icon: Sparkles, path: "/" },
+  { id: "drafts", label: "Drafts", icon: FileText, path: "/drafts" },
+  { id: "active", label: "Active Campaigns", icon: Activity, path: "/active-campaigns" },
+  { id: "analytics", label: "Hypercare Analytics", icon: BarChart3, path: "/hypercare-analytics" },
 ];
 
 export const Sidebar = () => {
@@ -28,16 +29,15 @@ export const Sidebar = () => {
             const Icon = item.icon;
             return (
               <li key={item.id}>
-                <button
-                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
-                    item.active
-                      ? "bg-primary text-primary-foreground"
-                      : "text-foreground hover:bg-muted"
-                  }`}
+                <NavLink
+                  to={item.path}
+                  end
+                  className="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-medium transition-colors text-foreground hover:bg-muted"
+                  activeClassName="bg-primary text-primary-foreground hover:bg-primary"
                 >
                   <Icon className="w-4 h-4" />
                   {item.label}
-                </button>
+                </NavLink>
               </li>
             );
           })}
